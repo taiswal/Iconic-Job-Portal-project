@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="contact-container">
+    <h1>Contact Us</h1>
+    <p class="contact-description">
+        Have questions, feedback, or need support? We’d love to hear from you!  
+        Fill out the form below or reach out to us directly.
+    </p>
+
+    <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:support@careerconnect.com">support@careerconnect.com</a></p>
+        <p><strong>Phone:</strong> +1-800-123-4567</p>
+        <p><strong>Address:</strong> 123 Career Street, Tech City, USA</p>
+    </div>
+
+    <form method="post" class="contact-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+
+<style>
+    .contact-container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: #f3f3f3; /* Light grey background */
+        border-radius: 12px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .contact-container h1 {
+        font-size: 32px;
+        color: #333; /* Dark text for heading */
+        margin-bottom: 10px;
+    }
+
+    .contact-description {
+        font-size: 16px;
+        color: #555; /* Slightly grey text */
+        margin-bottom: 30px;
+    }
+
+    .contact-info {
+        text-align: left;
+        margin-bottom: 30px;
+        padding: 20px;
+        background: #fff; /* White background for contact info */
+        border-radius: 8px;
+        border: 1px solid #ddd;
+    }
+
+    .contact-info p {
+        margin: 10px 0;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .contact-info a {
+        color: #d4af37; /* Gold highlight for links */
+        text-decoration: none;
+    }
+
+    .contact-info a:hover {
+        text-decoration: underline;
+    }
+
+    .contact-form {
+        text-align: left;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #fff;
+        color: #333;
+    }
+
+    .contact-form button {
+        background-color: #d4af37; /* Gold background for the button */
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+        background-color: #b38b2d; /* Darker gold color on hover */
+    }
+
+    @keyframes fadeInUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+</style>
+
+{% endblock content %}
+
+
+

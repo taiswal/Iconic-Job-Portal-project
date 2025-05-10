@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Candidate Dashboard{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="mb-4 text-primary"><i class="fas fa-user-tie me-2"></i>Candidate Dashboard</h2>
+    
+    <div class="row g-4">
+        <div class="col-md-6 col-xl-4">
+            <div class="card shadow border-0 rounded-4">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-user me-2"></i>Your Profile</h5>
+                    <p class="card-text">View and update your personal and professional information.</p>
+                    <a href="{% url 'view_candidate_profile' %}" class="btn btn-outline-primary btn-sm">View Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4">
+            <div class="card shadow border-0 rounded-4">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-briefcase me-2"></i>Applied Jobs</h5>
+                    <p class="card-text">Track the jobs you have applied to and their statuses.</p>
+                    <a href="#" class="btn btn-outline-success btn-sm">View Applications</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4">
+            <div class="card shadow border-0 rounded-4">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-file-alt me-2"></i>Resume</h5>
+                    <p class="card-text">Upload or update your resume for better visibility.</p>
+                    <a href="#" class="btn btn-outline-secondary btn-sm">Manage Resume</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

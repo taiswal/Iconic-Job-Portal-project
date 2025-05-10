@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="card mx-auto p-4 shadow text-center" style="max-width: 500px;">
+        <h4 class="mb-3 text-danger"><i class="bi bi-trash-fill"></i> Confirm Delete</h4>
+        <p>Are you sure you want to delete your profile?</p>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger"><i class="bi bi-trash3"></i> Delete</button>
+            <a href="{% url 'view_candidate_profile' %}" class="btn btn-secondary ms-2">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

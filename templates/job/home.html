@@ -1,0 +1,308 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container text-center">
+        <h1>Welcome to <span class="highlight">CareerConnect</span></h1>
+        <p>Your one-stop solution for finding the perfect job or candidate.</p>
+        <a href="{% url 'user_login' %}" class="cta-btn">Get Started</a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="container">
+        <h2 class="section-title">Why Choose CareerConnect?</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <img src="/media/download.jpeg" alt="Smart Search">
+                <h3>Smart Search</h3>
+                <p>Advanced filters to find the best matches quickly.</p>
+            </div>
+            <div class="feature-card">
+                <img src="/media/images (3).jpeg" alt="Real-time Notifications">
+                <h3>Real-time Notifications</h3>
+                <p>Stay updated with instant job alerts and application progress.</p>
+            </div>
+            <div class="feature-card">
+                <img src="/media/images (2).jpeg" alt="AI Recommendations">
+                <h3>AI Recommendations</h3>
+                <p>AI-powered suggestions to help you find the best opportunities.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-it-works">
+    <div class="container">
+        <h2 class="section-title">How CareerConnect Works</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>Create Your Profile</h3>
+                <p>Sign up and create a professional profile as a job seeker or employer.</p>
+            </div>
+            <div class="step">
+                <h3>Browse Jobs / Post Jobs</h3>
+                <p>Explore job listings or post job openings to attract talent.</p>
+            </div>
+            <div class="step">
+                <h3>Get Matched</h3>
+                <p>AI-driven matching helps connect job seekers with the right roles and vice versa.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+    <div class="container text-center">
+        <h2 class="section-title">What Our Users Say</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <p>"CareerConnect helped me land my dream job in less than a month! The platform is intuitive and easy to use."</p>
+                <h4>John Doe, Software Engineer</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"As a hiring manager, I found the perfect candidate for my team using CareerConnect. The AI recommendations were spot on!"</p>
+                <h4>Jane Smith, HR Manager</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta">
+    <div class="container text-center">
+        <h2>Ready to take the next step in your career?</h2>
+        <a href="{% url 'user_login' %}" class="cta-btn">Sign Up Now</a>
+    </div>
+</section>
+
+<!-- Style -->
+<style>
+    /* General Styles */
+    body {
+        font-family: 'Helvetica Neue', sans-serif;
+        line-height: 1.6;
+        background-color: #fafafa; /* Soft light background */
+        color: #333;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .highlight {
+        color: #d99d3b; /* Soft mustard yellow */
+    }
+
+    /* Header Styles */
+    header {
+        background-color: #333; /* Dark grey background */
+        color: #fff;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+    }
+
+    header nav {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    header nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+    }
+
+    header nav a:hover {
+        color: #d99d3b; /* Soft mustard yellow on hover */
+    }
+
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(135deg, #d3d3d3, #e2e2e2); /* Soft grey gradient */
+        color: #333;
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .cta-btn {
+        background-color: #d99d3b; /* Soft mustard yellow button */
+        color: #333;
+        padding: 12px 30px;
+        font-size: 1.2rem;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .cta-btn:hover {
+        background-color: #c78a28; /* Darker mustard yellow on hover */
+    }
+
+    /* Features Section */
+    .features {
+        padding: 60px 0;
+        background-color: #fff; /* White background */
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: #333;
+    }
+
+    .feature-cards {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .feature-card {
+        background: #f0f0f0; /* Light grey */
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        width: 30%;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .feature-card img {
+        width: 130px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .feature-card p {
+        font-size: 1rem;
+        color: #777;
+    }
+
+    /* How It Works Section */
+    .how-it-works {
+        padding: 60px 0;
+        background-color: #f7f7f7; /* Soft light grey */
+    }
+
+    .steps {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .step {
+        width: 30%;
+        background-color: #fff; /* White background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .step h3 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .step p {
+        color: #777;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+        padding: 60px 20px;
+        background-color: #fff; /* White background */
+    }
+
+    .testimonial-cards {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .testimonial-card {
+        background: #f0f0f0; /* Light grey */
+        padding: 30px;
+        border-radius: 10px;
+        width: 45%;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-card p {
+        font-style: italic;
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+    .testimonial-card h4 {
+        font-size: 1rem;
+        color: #333;
+        font-weight: 600;
+    }
+
+    /* Footer Styles */
+    footer {
+        background-color: #f0f0f0; /* Light grey */
+        color: #333;
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    footer a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        color: #d99d3b; /* Soft mustard yellow on hover */
+    }
+</style>
+
+{% endblock %}

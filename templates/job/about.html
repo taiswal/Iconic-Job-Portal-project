@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+
+<section class="about-hero">
+    <div class="container text-center">
+        <h1>Welcome to <span>CareerConnect</span></h1>
+        <p>Your bridge between talent and opportunity.</p>
+    </div>
+</section>
+
+<section class="about-features">
+    <div class="container">
+        <h2>Why Choose CareerConnect?</h2>
+        <ul class="features-list">
+            <li>🔍 Smart search filters for targeted job discovery.</li>
+            <li>📝 Verified jobs and secure candidate profiles.</li>
+            <li>⚡ Real-time notifications for job updates.</li>
+            <li>📄 Resume upload and easy application tracking.</li>
+            <li>🤝 Seamless connection between companies & candidates.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="about-for">
+    <div class="container two-columns">
+        <div>
+            <h2>For Job Seekers</h2>
+            <p>Our platform empowers professionals to:</p>
+            <ul>
+                <li>✨ Build standout profiles.</li>
+                <li>📬 Get instant updates on matching jobs.</li>
+                <li>🧑‍💻 Upload resumes & apply with one click.</li>
+                <li>🌟 Track your application progress.</li>
+            </ul>
+        </div>
+        <div>
+            <h2>For Employers</h2>
+            <p>We help companies hire smarter by offering:</p>
+            <ul>
+                <li>🎯 AI-powered talent recommendations.</li>
+                <li>📋 Manage candidates from one simple dashboard.</li>
+                <li>📢 Post jobs and attract skilled applicants.</li>
+                <li>🔒 Secure and reliable communication.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="about-privacy">
+    <div class="container">
+        <h2>🔒 Commitment to Privacy</h2>
+        <p>Your personal data is protected with the highest standards of security. At CareerConnect, privacy isn’t optional — it’s a promise.</p>
+    </div>
+</section>
+
+<section class="about-team">
+    <div class="container">
+        <h2 class="text-center">Meet Our Team</h2>
+        <div class="team-grid">
+
+            <div class="team-card">
+                <img src="/media/business-man-silhouette-man-with-suit-standing-illustration-business-man-logo-vector.jpg" alt="Wasim Afreeth">
+                <h3>Azad Pantwane</h3>
+                <p>Founder & CEO</p>
+            </div>
+
+            <div class="team-card">
+                <img src="/media/1000_F_302891619_khCmAudoJx3JLT3ZaQYCLrCPIt6n5MIf.jpg" alt="Martin">
+                <h3>Pratiksha Patil</h3>
+                <p>Senior Software Developer</p>
+            </div>
+
+            <div class="team-card">
+                <img src="/media/1000_F_302891619_khCmAudoJx3JLT3ZaQYCLrCPIt6n5MIf.jpg" alt="Anjali Sharma">
+                <h3>Esha Jain</h3>
+                <p>Lead Developer + Head of Marketing </p>  
+            </div>
+
+            <div class="team-card">
+                <img src="/media/1000_F_302891619_khCmAudoJx3JLT3ZaQYCLrCPIt6n5MIf.jpg" alt="Neha Kapoor">
+                <h3>Devika Jadhav</h3>
+                <p>Lead Developer +  UI/UX Designer </p>  
+            </div>
+
+            <div class="team-card">
+                <img src="/media/1000_F_302891619_khCmAudoJx3JLT3ZaQYCLrCPIt6n5MIf.jpg" alt="Sneha Iyer">
+                <h3>Shubhangi Taiswal</h3>
+                <p>Excutive Developer + UI/UX Designer</p>  
+            </div>
+
+            <div class="team-card">
+                <img src="/media/1000_F_302891619_khCmAudoJx3JLT3ZaQYCLrCPIt6n5MIf.jpg" alt="Priya Verma">
+                <h3>Sayali Borse</h3>
+                <p>Senior Software Developer</p>  
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="about-contact">
+    <div class="container text-center">
+        <h2>Get In Touch</h2>
+        <p>Email: <a href="mailto:support@careerconnect.com">support@careerconnect.com</a></p>
+        <p>Phone: +1-800-123-4567</p>
+    </div>
+</section>
+
+<style>
+    .about-hero {
+        background: linear-gradient(135deg, #d3d3d3, #e2e2e2);
+        color: #333;
+        padding: 80px 20px;
+        text-align: center;
+    }
+    .about-hero h1 span {
+        color: #d4af37;  /* Gold Highlight */
+    }
+    .about-features, .about-for, .about-privacy, .about-team, .about-contact {
+        padding: 40px 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+        background: #f3f3f3;
+        border-radius: 12px;
+    }
+    .about-features h2, .about-for h2, .about-privacy h2, .about-contact h2 {
+        color: #3b3b3b;
+        margin-bottom: 20px;
+    }
+    .features-list, .about-for ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    .features-list li, .about-for ul li {
+        margin-bottom: 10px;
+        padding-left: 25px;
+        position: relative;
+        font-size: 15px;
+    }
+    .features-list li::before, .about-for ul li::before {
+        content: "✔️";
+        position: absolute;
+        left: 0;
+        color: #28a745;
+    }
+    .two-columns {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    .two-columns > div {
+        flex: 1 1 45%;
+        min-width: 280px;
+    }
+    .about-team .team-grid {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .team-card {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        width: 260px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        opacity: 0;
+        animation: fadeInUp 0.8s forwards;
+    }
+    .team-card:nth-child(1) { animation-delay: 0.1s; }
+    .team-card:nth-child(2) { animation-delay: 0.2s; }
+    .team-card:nth-child(3) { animation-delay: 0.3s; }
+    .team-card:nth-child(4) { animation-delay: 0.4s; }
+    .team-card:nth-child(5) { animation-delay: 0.5s; }
+    .team-card:nth-child(6) { animation-delay: 0.6s; }
+    .team-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    .team-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+    @keyframes fadeInUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    .about-contact a {
+        color: #d4af37;
+        text-decoration: none;
+    }
+    .about-contact a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+{% endblock %}

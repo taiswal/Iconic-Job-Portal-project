@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Job Post</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <style>
+        body {
+            background: #f4f6f8;
+        }
+        .form-container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .form-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        .form-title i {
+            color: #0d6efd;
+            font-size: 24px;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        label {
+            font-weight: 500;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<div class="form-container">
+    <div class="form-title">
+        <i class="fas fa-briefcase"></i>
+        <h4 class="mb-0">Create a New Job Post</h4>
+    </div>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="mb-3">
+                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                {{ field }} <br>
+                {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+            </div> <br> 
+        {% endfor %}
+
+        <div class="btn-group mt-4">
+            <button type="submit" class="btn btn-primary w-50">
+                <i class="fas fa-plus-circle me-2"></i> Create Post
+            </button>
+            <a href="{% url 'list_posts' %}" class="btn btn-outline-secondary w-50">
+                <i class="fas fa-arrow-left me-2"></i> Back to Posts
+            </a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container my-5">
+  <h2 class="mb-4 text-center">Update Tag</h2>
+
+  <form method="POST" class="p-4 shadow rounded bg-light">
+    {% csrf_token %}
+
+    <div class="mb-3">
+      <label class="form-label">Tag Name:</label>
+      <input type="text" name="tag_name" class="form-control" value="{{ tag.tag_name }}" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Update Tag</button>
+  </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5 text-center">
+  <h2>Create Recruiter Profile</h2>
+  <form method="post" enctype="multipart/form-data" class="p-4 border rounded shadow w-50 mx-auto bg-light">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success mt-3">
+      <i class="bi bi-plus-circle"></i> Create
+    </button>
+  </form>
+</div>
+{% endblock %}

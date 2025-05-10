@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="post" enctype="multipart/form-data" class="container mt-4 p-4 border rounded shadow-sm bg-light">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Enter password" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="confirm_password" class="form-label">Confirm Password</label>
+                <input type="password" name="confirm_password" class="form-control" placeholder="Confirm password" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" name="phone" class="form-control" placeholder="Enter phone number">
+            </div>
+
+            <div class="mb-3">
+                <label for="user_type" class="form-label">User Type</label>
+                <select name="user_type" class="form-select" required>
+                    <option value="">-- Select --</option>
+                    <option value="candidate">Candidate</option>
+                    <option value="recruiter">Recruiter</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="profile_picture" class="form-label">Profile Picture</label>
+                <input type="file" name="profile_picture" class="form-control">
+            </div>
+
+            <!-- Candidate specific -->
+            <div class="mb-3">
+                <label for="resume" class="form-label">Resume</label>
+                <input type="file" name="resume" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label for="linkedin" class="form-label">LinkedIn Profile</label>
+                <input type="url" name="linkedin" class="form-control" placeholder="https://linkedin.com/in/...">
+            </div>
+
+            <div class="mb-3">
+                <label for="portfolio" class="form-label">Portfolio Website</label>
+                <input type="url" name="portfolio" class="form-control" placeholder="https://yourportfolio.com">
+            </div>
+
+            <!-- Recruiter specific -->
+            <div class="mb-3">
+                <label for="company_name" class="form-label">Company Name</label>
+                <input type="text" name="company_name" class="form-control" placeholder="Enter company name">
+            </div>
+
+            <div class="mb-3">
+                <label for="company_website" class="form-label">Company Website</label>
+                <input type="url" name="company_website" class="form-control" placeholder="https://company.com">
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

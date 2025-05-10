@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>My Applications</h2>
+<ul>
+  {% for app in applications %}
+    <li>
+      <strong>{{ app.job.title }}</strong> - {{ app.status }}
+      <br>Applied on: {{ app.applied_at|date:"M d, Y" }}
+    </li>
+  {% empty %}
+    <li>You have not applied to any jobs yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

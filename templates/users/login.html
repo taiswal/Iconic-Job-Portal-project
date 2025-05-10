@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="height:100vh; background:#e9ecef;">
+    <div class="card p-4 shadow-sm" style="width: 100%; max-width: 400px; border: none; border-radius: 12px;">
+        <h3 class="text-center mb-4" style="color:#333;">Welcome Back!</h3>
+        <form method="post" class="p-3 rounded bg-white shadow-sm">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
+            </div>
+
+            <!-- Role Selection -->
+            <div class="mb-3">
+                <label for="role" class="form-label">I am a</label>
+                <select name="role" id="role" class="form-control" required>
+                    <option value="" disabled selected>Select your role</option>
+                    <option value="student">Student</option> 
+                    <option value="jobseeker">Jobseeker</option>
+                    <option value="recruiter">Recruiter</option>
+                </select>
+            </div> 
+
+            <button type="submit" class="btn btn-success w-100">Login</button>
+            <div class="text-center mt-3">
+                <small>Don't have an account? <a href="{% url 'register' %}" class="text-decoration-none">Register</a></small>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

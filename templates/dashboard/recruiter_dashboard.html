@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Recruiter Dashboard{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="mb-4 text-success"><i class="fas fa-building me-2"></i>Recruiter Dashboard</h2>
+    
+    <div class="row g-4">
+        <div class="col-md-6 col-xl-4">
+            <div class="card shadow border-0 rounded-4">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-briefcase me-2"></i>Your Job Posts</h5>
+                    <p class="card-text">Create, view, and manage all your job listings.</p>
+                    <a href="{% url 'create_post' %}" class="btn btn-outline-success btn-sm">Add Job Post</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4">
+            <div class="card shadow border-0 rounded-4">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-users me-2"></i>Applicants</h5>
+                    <p class="card-text">View candidates who applied for your job listings.</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">View Applicants</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4">
+            <div class="card shadow border-0 rounded-4">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-user-circle me-2"></i>Profile</h5>
+                    <p class="card-text">Manage your company details and profile information.</p>
+                    <a href="#" class="btn btn-outline-secondary btn-sm">Edit Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

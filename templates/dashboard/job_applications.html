@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Applications for {{ job.title }}</h2>
+
+<form method="get">
+  <label for="status">Filter by status:</label>
+  <select name="status" id="status" onchange="this.form.submit();">
+    <option value="">All</option>
+    <option value="Pending" {% if status_filter == 'Pending' %}selected{% endif %}>Pending</option>
+    <option value="Accepted" {% if status_filter == 'Accepted' %}selected{% endif %}>Accepted</option>
+    <option value="Declined" {% if status_filter == 'Declined' %}selected{% endif %}>Declined</option>
+  </select>
+</form>
+
+<ul>
+  {% for app in page_obj %}
+    <li>
+      <strong>{{ app.applicant.email }}</strong> — {{ app.status }}<br>
+      <a href="{{ app.resume.url }}">Download Resume</a><br>
+
+      <form method="post" action="{% url 'update_application_status' app.id 'Accepted' %}" style="display:inline;" onsubmit="return confirm('Shortlist this application?');">
+        {% csrf_token %}
+        <button type="submit">Shortlist</button>
+      </form>
+      <form method="post" action="{% url 'update_application_status' app.id 'Declined' %}" style="display:inline;" onsubmit="return confirm('Decline this application?');">
+        {% csrf_token %}
+        <button type="submit">Decline</button>
+      </form>
+    </li>
+  {% empty %}
+    <li>No applications found.</li>
+  {% endfor %}
+</ul>
+
+<div class="pagination">
+  {% if page_obj.has_previous %}
+    <a href="?page=1{% if status_filter %}&status={{ status_filter }}{% endif %}">&laquo; First</a>
+    <a href="?page={{ page_obj.previous_page_number }}{% if status_filter %}&status={{ status_filter }}{% endif %}">Previous</a>
+  {% endif %}
+
+  <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+  {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}{% if status_filter %}&status={{ status_filter }}{% endif %}">Next</a>
+    <a href="?page={{ page_obj.paginator.num_pages }}{% if status_filter %}&status={{ status_filter }}{% endif %}">Last &raquo;</a>
+  {% endif %}
+</div>
+{% endblock %}
